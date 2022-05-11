@@ -6,6 +6,8 @@ import org.bukkit.entity.EntityType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class GetDataSQL {
@@ -77,5 +79,13 @@ public class GetDataSQL {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public void onServerCloseUpdate(HashMap<UUID, Integer> data) {
+        if (!data.isEmpty()) {
+            for (Map.Entry<UUID, Integer> entry : data.entrySet()) {
+                setAge(entry.getKey(), entry.getValue());
+            }
+        }
+        System.out.println("saving data to database");
     }
 }

@@ -35,9 +35,9 @@ public final class main extends JavaPlugin{
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        MySQL.disconnect();
         tempData.removeNametag();
-
+        data.onServerCloseUpdate(tempData.getToUpdate());
+        MySQL.disconnect();
     }
 
     public void databaseConnect() {

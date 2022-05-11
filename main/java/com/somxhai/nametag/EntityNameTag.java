@@ -1,6 +1,7 @@
 package com.somxhai.nametag;
 
 import com.somxhai.main;
+import com.somxhai.utils.TempData;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
@@ -48,7 +49,7 @@ public class EntityNameTag {
                 armorStand.setCustomName(ChatColor.translateAlternateColorCodes('&', "&6Villager &6| &a" + day + " &aDay"));
             }
         }
-        main.plugin.data.setAge(id, day);
+        main.plugin.tempData.addToHashMap(id, day);
     }
 
     public int getAge() {
