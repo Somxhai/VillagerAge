@@ -60,7 +60,6 @@ public class EntityAge implements Listener {
     }
     private void createNameTag(Entity entity, int age) {
         EntityNameTag nameTag = new EntityNameTag(entity, entity.getUniqueId(), age);
-
         LivingEntity livingEntity = (LivingEntity) entity;
         RepeatingTask repeatingTask = new RepeatingTask(main.plugin, 0, 200) {
             @Override
