@@ -1,0 +1,4 @@
+# age of villager
+age: 150
+disable_worlds:
+  - 'world'

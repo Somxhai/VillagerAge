@@ -1,0 +1,4 @@
+name: VillagerAge
+version: '${project.version}'
+main: com.somxhai.main
+api-version: 1.18
