@@ -1,4 +1,17 @@
 name: VillagerAge
 version: '${project.version}'
-main: com.somxhai.main
+main: com.somxhai.Main
 api-version: 1.18
+author: Somxhai
+prefix: VillageAge
+
+permissions:
+  vilage.commands.reload:
+    default: false
+  vilage.commands.egg:
+    default: false
+  vilage.*:
+    default: false
+commands:
+  vilage:
+    usage: /<command>

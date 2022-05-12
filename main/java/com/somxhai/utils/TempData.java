@@ -1,19 +1,13 @@
 package com.somxhai.utils;
-
-import com.somxhai.nametag.EntityNameTag;
 import org.bukkit.entity.Entity;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
 
 public class TempData {
-    private final List<Entity> temp = new ArrayList<>();
 
-    public void putToTemp(Entity a) {
-        temp.add(a);
-    }
-    public List<Entity> getTemp() {
-        return temp;
-    }
+    private final List<Entity> temp = new ArrayList<>();
     public void removeNametag() {
         for (Entity i : temp) {
             i.remove();
@@ -28,8 +22,16 @@ public class TempData {
             toUpdate.put(id, age);
         }
     }
-
     public HashMap<UUID, Integer> getToUpdate() {
         return toUpdate;
+    }
+    private final HashMap<ItemMeta, Integer> itemMeta = new HashMap<>();
+    public void addToItemMeta(ItemStack e, int amount) {
+        ItemMeta meta = e.getItemMeta();
+        if (itemMeta.containsKey(meta)) {
+            itemMeta.replace(meta, amount);
+        } else {
+            itemMeta.put(meta, amount);
+        }
     }
 }

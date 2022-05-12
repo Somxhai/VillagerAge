@@ -5,11 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MySQL {
-    private final String host = "localhost";
-    private final String port = "3306";
     private final String database;
-    private final String username = "root";
-    private final String password = "";
 
     public MySQL(String db) {
         database = db;
@@ -18,8 +14,12 @@ public class MySQL {
     public boolean isConnected() {
         return (connection != null);
     }
-    public void connect() throws ClassNotFoundException, SQLException {
+    public void connect() throws SQLException {
         if (!isConnected()) {
+            String password = "";
+            String username = "root";
+            String port = "3306";
+            String host = "localhost";
             connection = DriverManager.getConnection("jdbc:mysql://" +
                             host + ":" + port + "/" + database + "?useSSL=false",
                     username, password);

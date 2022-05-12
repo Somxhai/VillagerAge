@@ -2,3 +2,8 @@
 age: 150
 disable_worlds:
   - 'world'
+
+# last line of custom egg
+# because this plugin use this line to check if the item is created by the plugin
+# note: if you change this line, the old one with old line will not work
+custom_egg_last_line: "&eHaving trouble? Contact Somxhai#5802 on Discord"
